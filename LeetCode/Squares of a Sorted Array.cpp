@@ -15,7 +15,6 @@ public:
                 frnd++;
                 i--;
             }
-            
             }
          return res;
     }
