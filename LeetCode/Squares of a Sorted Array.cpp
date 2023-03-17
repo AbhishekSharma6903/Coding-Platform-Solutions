@@ -7,20 +7,16 @@ public:
         int i = n-1;
         while(me >= frnd){
             if(abs(nums[me]) >= abs(nums[frnd])){
-                res[i]=abs(nums[me]);
+                res[i]=(nums[me]*nums[me]);
                 me--;
                 i--;
             }else{
-                res[i] = abs(nums[frnd]);
+                res[i] =(nums[frnd]*nums[frnd]);
                 frnd++;
                 i--;
             }
             
             }
-            for(int i=0; i<n; i++){
-                res[i]=res[i]*res[i];
-           
-        }
          return res;
     }
 };
