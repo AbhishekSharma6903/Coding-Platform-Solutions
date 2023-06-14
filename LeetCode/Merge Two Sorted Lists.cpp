@@ -1,7 +1,6 @@
 class Solution {
 public:
-	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) 
-  {
+	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
 		// if list1 happen to be NULL
 		// we will simply return list2.
 		if(l1 == NULL) {
