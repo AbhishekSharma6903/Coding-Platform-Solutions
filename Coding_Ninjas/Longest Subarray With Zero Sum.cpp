@@ -5,18 +5,12 @@ int getLongestZeroSumSubarrayLength(vector<int> &arr){
 	int maxi =0;
 	for(int i=0; i<arr.size();i++){
 		sum += arr[i];
-		if(sum == 0){
-			maxi++;
-		}
-		else{
 			if(mp.find(sum) != mp.end()){
 				maxi = max(maxi, i-mp[sum]);
 			}
 			else {
-				mp[sum] = i;
-			}
+				mp[sum] = i;	
 		}
 	}
 	return maxi;
-	
 }
