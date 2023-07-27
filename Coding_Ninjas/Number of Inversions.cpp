@@ -1,42 +1,44 @@
-#include <vector>
-using namespace std;
 
-void merge(vector<int> &arr, int low, int mid, int high, int &count) {
-    vector<int> temp;
-    int i = low;
-    int j = mid + 1;
-    while (i <= mid && j <= high) {
-        if (arr[i] <= arr[j]) {
-            temp.push_back(arr[i++]);
-        } else {
-            temp.push_back(arr[j++]);
-            count += (mid - i + 1);
-
+int Merge(vector <int> &arr, int low, int mid, int high){
+    vector <int> temp;
+    int left = low;
+    int right = mid +1;
+    int count =0 ;
+    while(left<=mid && right<=high){
+        if(arr[left]<= arr[right]){
+            temp.push_back(arr[left]);
+            left++;
         }
+        else {
+            temp.push_back(arr[right]);
+            count+= (mid-left+1);
+            right++;
+        }
+    }  
+    while(left <= mid){
+        temp.push_back(arr[left]);
+            left++;
     }
-    while (i <= mid) {
-        temp.push_back(arr[i++]);
+    while(right<=high){
+        temp.push_back(arr[right]);
+            right++;
     }
-    while (j <= high) {
-        temp.push_back(arr[j++]);
+    for(int i=low; i<=high; i++){
+        arr[i] = temp[i-low];
     }
-    for (int i = low; i <= high; i++) {
-        arr[i] = temp[i - low];
-    }
-}
-
-void ms(vector<int> &arr, int low, int high, int &count) {
-    if (low >= high) {
-        return;
-    }
-    int mid = (low + high) / 2;
-    ms(arr, low, mid, count);
-    ms(arr, mid + 1, high, count);
-    merge(arr, low, mid, high, count);
-}
-
-int numberOfInversions(vector<int> &a, int n) {
-    int count = 0;
-    ms(a, 0, n - 1, count);
     return count;
+}
+
+int mergeSort(vector <int> &arr, int low, int high){
+    int count =0 ;
+    if(low>=high) return count;
+    int mid = (low + high)/2;
+    count += mergeSort(arr, low, mid);
+    count += mergeSort(arr, mid+1, high);
+    count += Merge(arr, low, mid, high);
+    return count;
+}
+
+int numberOfInversions(vector<int>&a, int n) {
+    return mergeSort(a, 0 , n-1);
 }
