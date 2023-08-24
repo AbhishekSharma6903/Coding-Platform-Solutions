@@ -1,3 +1,13 @@
+//Better Code: STL function:
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        next_permutation(nums.begin(), nums.end());
+    }
+};
+
+----------------------------------------------------------------------------------------------------------------
+
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
