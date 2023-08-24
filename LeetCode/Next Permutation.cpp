@@ -11,20 +11,28 @@ public:
     
 class Solution {
 public:
-    void nextPermutation(vector<int>& nums) {
-        int n = nums.size(), index = -1;
+    void nextPermutation(vector<int>& A) {
+        int n = A.size();
+        int index = -1;
         for(int i=n-2; i>=0; i--){
-            if(nums[i] < nums[i+1]){
+            if(A[i]< A[i+1]){
                 index = i;
                 break;
             }
         }
-        for(int i=n-1; i>=index && index != -1; i--){
-            if(nums[i] > nums[index]){
-                swap(nums[i], nums[index]);
+
+        if(index ==-1){
+            reverse(A.begin(), A.end());
+            return ;
+        }
+        
+        for(int i=n-1; i>index; i--){
+            if(A[i]>A[index]){
+                swap(A[i], A[index]);
                 break;
             }
         }
-        reverse(nums.begin() + index + 1, nums.end());
+        reverse(A.begin()+index+1, A.end());
+        return ;
     }
 };
