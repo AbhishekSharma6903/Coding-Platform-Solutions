@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+
 int findKRotation(vector<int> &arr){    
     int low =0;
     int n =arr.size();
