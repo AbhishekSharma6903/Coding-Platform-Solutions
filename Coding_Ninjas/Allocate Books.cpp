@@ -14,3 +14,18 @@ int NoOfStudents(vector<int> arr, int current_page){
     }
     return students;
 }
+
+int findPages(vector<int>& arr, int n, int m) {
+    int low = *max_element(arr.begin(), arr.end());
+    int high = accumulate(arr.begin(), arr.end(),0);
+    int ans=-1;
+    while(low<=high){
+        int mid = (low+high)/2;
+        if(NoOfStudents(arr,mid)>m){
+              
+              low = mid+1;
+        }
+        else high = mid-1;
+    }
+    return low;
+}
