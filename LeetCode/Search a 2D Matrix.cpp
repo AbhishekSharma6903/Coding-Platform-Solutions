@@ -5,7 +5,7 @@ public:
         int m = arr[0].size();
         int low=0;
         int high = n+m-1;
-        while(low<high){
+        while(low<=high){
             int mid = (low + high) /2;
             int row = mid / m;
             int col = mid % m;
