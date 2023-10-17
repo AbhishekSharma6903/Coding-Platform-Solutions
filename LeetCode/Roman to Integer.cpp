@@ -17,6 +17,5 @@ public:
    }
    
    return sum;
-}
-    
+    }
 };
