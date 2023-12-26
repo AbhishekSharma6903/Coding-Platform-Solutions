@@ -57,3 +57,23 @@ void mergeTwoSortedArraysWithoutExtraSpace(vector<long long> &a, vector<long lon
 	sort(b.begin(), b.end());
 	
 }
+
+
+//EASY method :
+
+vector<int> ninjaAndSortedArrays(vector<int>& arr1, vector<int>& arr2, int m, int n) {
+    int nsize = m + n;
+    vector<int> arr(nsize);
+
+    for (int i = 0; i < m; i++) {
+        arr[i] = arr1[i]; // Corrected the indexing from arr1[m] to arr1[i]
+    }
+
+    for (int i = 0; i < n; i++) {
+        arr[m + i] = arr2[i];
+    }
+
+    sort(arr.begin(), arr.end());
+    return arr;
+}
+
