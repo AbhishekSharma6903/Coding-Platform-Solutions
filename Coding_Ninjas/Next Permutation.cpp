@@ -13,7 +13,6 @@ vector<int> nextPermutation(vector<int> &A, int n)
         reverse(A.begin(), A.end());
         return A;
     }
-
     for(int i=n-1; i>index; i--){
         if(A[i]>A[index]){
             swap(A[i],A[index]);
