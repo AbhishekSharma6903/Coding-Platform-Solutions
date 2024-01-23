@@ -11,5 +11,6 @@ bool searchMatrix(vector<vector<int>>& mat, int target) {
         else if(mat[row][col] < target) low = mid+1;
         else high = mid-1;
     } 
+
     return false ;
 }
