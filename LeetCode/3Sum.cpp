@@ -24,5 +24,6 @@ public:
         for(auto triplets : s)
             output.push_back(triplets);
         return output;
+        
     }
 };
