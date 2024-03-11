@@ -1,4 +1,5 @@
 class Solution {
+
 public:
     bool canPlaceFlowers(vector<int>& fb, int n) {
         int len = fb.size();
