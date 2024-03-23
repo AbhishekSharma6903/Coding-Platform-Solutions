@@ -1,15 +1,17 @@
 class Solution {
 public:
     int arithmeticTriplets(vector<int>& nums, int diff) {
-        int cnt =0 ;
-        int n = nums.size();
-        for(int i=0; i<n-2; i++){
-            for(int j=i+1;j<n-1; j++){
-                for(int k=j+1; k<n; k++){
-                    if(abs(nums[i]- nums[j])== diff && abs(nums[k]- nums[j])== diff) cnt++;
-                }
-            }
+        map<int,int>mp;
+        int count = 0 ;
+        for( int i = 0 ; i < nums.size() ; i++ )
+            mp[ nums[i] ]++;
+        for( int i = 0 ; i < nums.size() ; i++ )
+        {
+            if ( mp[nums[i]+diff] && mp[nums[i]+diff+diff] )
+                count++;
         }
-        return cnt;
+        return count ;
     }
 };
+
+//checks if the element with say a have the other two pairs a+diff and a+diff+diff , then can increment the count
