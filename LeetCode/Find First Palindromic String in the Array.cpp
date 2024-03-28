@@ -1,5 +1,6 @@
 class Solution {
 public:
+
 bool checker(string arr){
     int n = arr.size();
     int flag=0;
