@@ -7,9 +7,7 @@ public:
             if (haystack.substr(i, n) == needle)
             return i;
         }
-        
     return -1;
-        
     }
 
 };
