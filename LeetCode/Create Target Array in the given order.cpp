@@ -7,6 +7,7 @@ public:
             target.insert(target.begin()+ index[i], nums[i]);
             i++;
         }
+        
         target.resize(nums.size());
         return target;
     }
