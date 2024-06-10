@@ -1,25 +1,29 @@
-#include <vector>
-#include <string>
-
 class Solution {
 public:
-    void helper(int n, std::vector<std::string>& ans, std::string output, int open, int close) {
-        if (output.size() == n * 2) {
-            ans.push_back(output);
+
+    void solver(int open, int close, string op, vector<string> &ans){
+        if(open==0 && close==0){
+            ans.push_back(op);
             return;
         }
-        if (open < n) {
-            helper(n, ans, output + "(", open + 1, close);
+        if(close>open){
+            string op2 = op;
+            op2.push_back(')');
+            solver(open,close-1,op2,ans);
         }
-        if (close < open) {
-            helper(n, ans, output + ")", open, close + 1);
+        if(open!=0){
+            string op1= op;
+            op1.push_back('(');
+            solver(open-1,close,op1,ans);
         }
     }
 
-    std::vector<std::string> generateParenthesis(int n) {
-        std::vector<std::string> ans;
-        helper(n, ans, "", 0, 0);
-        return ans;
+    vector<string> generateParenthesis(int n) {
+        vector<string> ans;
+        int close = n;
+        int open = n;
+        string op = "";
+        solver(open, close,op, ans );
+    return ans;
     }
-
 };
