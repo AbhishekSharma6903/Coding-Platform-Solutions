@@ -10,9 +10,7 @@ public:
                 cnt = cnt + (r-l);
                 l++;
             }
-            else{
-                r--;
-            }
+            else r--;   
         }
         return cnt;
     }
