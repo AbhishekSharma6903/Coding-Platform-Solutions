@@ -5,8 +5,6 @@ int xoring(int x)
         else if(x % 4 == 3)return 0;
         else return x;
     }
-    
-  
     int findXOR(int l, int r) {
         return xoring(r)^xoring(l-1);
         // complete the function here
