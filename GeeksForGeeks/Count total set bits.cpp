@@ -1,4 +1,5 @@
- int bit(int n) {
+
+int bit(int n) {
     int prev = 1;
     if (n == 0) return 1;
     if (n == 1) return prev+1;
