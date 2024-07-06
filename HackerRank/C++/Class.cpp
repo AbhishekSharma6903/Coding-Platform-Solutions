@@ -9,8 +9,7 @@ class Student {
         string last_name;
         int standard;
     public:
-        void set_age(int a) 
-        {
+        void set_age(int a)  {
             age = a;
         }
         int get_age() 
