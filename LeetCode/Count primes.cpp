@@ -14,6 +14,5 @@ public:
             if(prime[i]==1) cnt++;
         }
         return cnt;
-
     }
 };
