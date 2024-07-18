@@ -16,7 +16,7 @@ public:
             if(left==0 && right==0){
                 count++; 
                 i++;
-            }
+                }
             }
         }
         return count>=n;
