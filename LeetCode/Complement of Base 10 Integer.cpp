@@ -15,5 +15,4 @@ public:
         int ans = (~n) & mask;
         return ans;
     }
-    
 };
