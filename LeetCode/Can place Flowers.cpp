@@ -9,7 +9,6 @@ public:
             if(fb[i]==0){
             if(i==0 || fb[i-1]==0) left=0;
             else left = 1;
-
             if(i== len-1 || fb[i+1]==0) right=0;
             else right=1;
 
