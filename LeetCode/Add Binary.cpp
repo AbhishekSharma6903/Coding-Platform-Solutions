@@ -5,7 +5,6 @@ public:
         int i = a.size()-1;
         int j = b.size()-1;
         int carry =0;
-        
         while(i>=0 || j>=0){
             int sum = carry;
             if(i>=0){
