@@ -5,7 +5,6 @@ public:
         for(int i=0; i<apple.size(); i++){
             sum= sum+apple[i];
         }
-        
         int count=0;
         sort(capacity.begin(), capacity.end());
         for(int i = capacity.size()-1; i>=0; i--){
