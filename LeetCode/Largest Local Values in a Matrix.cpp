@@ -1,7 +1,6 @@
 class Solution {
 public:
-    vector<vector<int>> largestLocal(vector<vector<int>>& grid) 
-    {
+    vector<vector<int>> largestLocal(vector<vector<int>>& grid) {
         int n = grid.size();
         vector<vector<int>>ans;
         vector<int>tmp;
